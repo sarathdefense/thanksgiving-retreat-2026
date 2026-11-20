@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanksgiving Family Retreat 2026</title>
+<meta property="og:title" content="Thanksgiving Family Retreat 2026">
+<meta property="og:description" content="Nov 26–28, 2026 · Ebenezer Retreat Center, Rincon, GA">
+<meta property="og:image" content="https://thanksgiving-retreat-2026.vercel.app/flyer.jpg">
+<meta property="og:url" content="https://thanksgiving-retreat-2026.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Thanksgiving Family Retreat 2026 · Nov 26–28 · Ebenezer Retreat Center, Rincon, GA">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Open+Sans:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #d9d0be;
+    font-family: 'Open Sans', sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+    min-height: 100vh; padding: 16px 0 120px;
+  }
+  .wrap { width: 100%; max-width: 680px; padding: 0 16px; margin: 0 auto 12px; }
+
+  /* TOP BAR */
+  .top-bar {
+    background: linear-gradient(135deg, #0a1228 0%, #1a3266 50%, #0a1228 100%);
+    border: 1.5px solid rgba(201,162,39,0.5); border-radius: 12px;
+    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(201,162,39,0.15);
+  }
+  .top-bar-label { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c9a227; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-bar > div:first-child { min-width: 0; }
+  .countdown { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 5px; letter-spacing: 0.5px; }
+  .countdown b { color: #fff; font-weight: 700; }
+  .share-btn {
+    display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+    background: rgba(201,162,39,0.12); border: 1.5px solid rgba(201,162,39,0.4);
+    border-radius: 20px; padding: 8px 16px; color: #c9a227;
+    font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    cursor: pointer; transition: all 0.2s; text-transform: uppercase;
+  }
+  .share-btn:hover { background: rgba(201,162,39,0.22); }
+  .share-toast {
+    position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
+    background: #0d1b3e; border: 1px solid #c9a227; color: #fff;
+    font-size: 13px; font-weight: 600; padding: 10px 24px; border-radius: 20px;
+    z-index: 2000; opacity: 0; transition: opacity 0.3s; pointer-events: none; white-space: nowrap;
+  }
+  .share-toast.show { opacity: 1; }
+
+  /* CARD SHELL */
+  .card {
+    background: #0d1b3e; border: 2px solid #c9a227; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 0 20px rgba(201,162,39,0.3), 0 8px 32px rgba(0,0,0,0.4);
+  }
+  .card.soft { border: 1.5px solid rgba(201,162,39,0.4); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+  .card-header { padding: 12px 16px 8px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(201,162,39,0.15); }
+  .card-header .icon { font-size: 14px; }
+  .card-header .label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c9a227; }
+  .card-footer { padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .card-footer p { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .card-footer a, .card-footer button {
+    font-size: 10px; color: #c9a227; font-weight: 700; text-decoration: none; letter-spacing: 0.5px;
+    background: none; border: none; cursor: pointer; font-family: inherit; white-space: nowrap;
+  }
+
+  /* FLYER */
+  .flyer-img { display: block; width: 100%; height: auto; cursor: zoom-in; background: #000; }
+  .lightbox { position: fixed; inset: 0; background: rgba(5,10,25,0.92); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border: 2px solid #c9a227; border-radius: 8px; }
+
+  /* VERSE */
+  .verse {
+    position: relative; padding: 20px 16px 18px; text-align: center;
+    background: radial-gradient(ellipse at center, rgba(201,162,39,0.14) 0%, rgba(13,27,62,0) 70%), linear-gradient(135deg, #0a1228 0%, #1a3266 50%, #0a1228 100%);
+  }
+  .verse-ref { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #c9a227; margin-bottom: 10px; }
+  .verse-ref::before, .verse-ref::after { content: ''; height: 1px; width: 36px; background: linear-gradient(90deg, transparent, #c9a227); }
+  .verse-ref::after { transform: scaleX(-1); }
+  .verse-text {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600;
+    font-size: clamp(14px, 4.3vw, 24px); color: #fff; white-space: nowrap; letter-spacing: 0.3px; line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .verse-text em { font-family: 'Cinzel', serif; font-style: normal; font-weight: 700; font-size: 1.02em; color: #e8c45a; letter-spacing: 1px; }
+  .verse-orn { margin-top: 10px; color: rgba(201,162,39,0.7); font-size: 12px; letter-spacing: 6px; }
+  /* PILLARS */
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(201,162,39,0.15); }
+  .pillar { background: #0d1b3e; padding: 16px 14px; }
+  .pillar-icon { font-size: 22px; margin-bottom: 6px; }
+  .pillar-name { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c9a227; margin-bottom: 4px; }
+  .pillar-text { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.45; }
+
+  /* SCHEDULE ACCORDION */
+  .sched-header {
+    background: linear-gradient(135deg, #1a3266, #0d1b3e);
+    border: 1.5px solid rgba(201,162,39,0.4); border-radius: 12px;
+    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: border-radius 0.3s;
+  }
+  .sched-header.open { border-radius: 12px 12px 0 0; }
+  .sched-left { display: flex; align-items: center; gap: 14px; }
+  .sched-icon {
+    width: 44px; height: 44px; border-radius: 10px; background: rgba(201,162,39,0.15);
+    border: 1.5px solid rgba(201,162,39,0.4); display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .sched-title-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c9a227; margin: 0 0 3px; }
+  .sched-title { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; color: #fff; }
+  .sched-sub { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .sched-arrow { color: #c9a227; font-size: 22px; transition: transform 0.3s; flex-shrink: 0; }
+  .sched-body {
+    background: #0d1b3e; border: 1.5px solid rgba(201,162,39,0.4); border-top: none;
+    border-radius: 0 0 12px 12px; max-height: 0; overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sched-header:not(.open) + .sched-body { border-width: 0; }
+  .sched-inner { padding: 16px 16px 24px; }
+  .sched-item { display: flex; gap: 16px; align-items: flex-start; }
+  .sched-dot-wrap { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 20px; align-self: stretch; }
+  .sched-dot { width: 12px; height: 12px; border-radius: 50%; background: #0d1b3e; border: 2px solid rgba(201,162,39,0.5); flex-shrink: 0; margin-top: 4px; }
+  .sched-dot.active { background: #c9a227; border: 2px solid #0d1b3e; box-shadow: 0 0 0 2px #c9a227; }
+  .sched-dot-wrap::after { content: ''; width: 2px; flex: 1; min-height: 20px; background: rgba(201,162,39,0.25); margin: 4px 0; }
+  .sched-item:last-child .sched-dot-wrap::after { display: none; }
+  .sched-content { padding-bottom: 16px; flex: 1; }
+  .sched-time { font-size: 10px; color: #c9a227; font-weight: 700; letter-spacing: 1px; margin-bottom: 2px; }
+  .sched-name { font-size: 13px; color: #fff; font-weight: 600; }
+  .sched-speaker { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; font-style: italic; }
+
+
+  /* SONGS */
+  .songs-head {
+    cursor: pointer; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #a07c10 0%, #e8c45a 45%, #c9a227 70%, #a07c10 100%);
+    border: 2px solid #f3dc8c; box-shadow: 0 0 22px rgba(201,162,39,0.55), 0 8px 28px rgba(0,0,0,0.35);
+    padding: 18px 18px;
+  }
+  .songs-head::after {
+    content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent);
+    animation: shine 3.2s ease-in-out infinite;
+  }
+  @keyframes shine { 0% { left: -60%; } 55%, 100% { left: 130%; } }
+  .songs-head .sched-icon { width: 52px; height: 52px; border-radius: 50%; background: #0d1b3e; border: 2px solid #f3dc8c; font-size: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+  .songs-head .sched-title-label { color: #0d1b3e; opacity: 0.8; letter-spacing: 3px; }
+  .songs-head .sched-title { color: #0d1b3e; font-size: 20px; font-weight: 900; letter-spacing: 0.5px; }
+  .songs-head .sched-sub { color: #0d1b3e; opacity: 0.75; font-weight: 600; font-size: 12px; }
+  .songs-head .sched-arrow { color: #0d1b3e; position: relative; z-index: 1; }
+  .songs-pill { display: inline-block; margin-left: 6px; padding: 2px 9px; border-radius: 12px; background: #0d1b3e; color: #e8c45a; font-family: 'Open Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; vertical-align: middle; }
+  .songs-head + .sched-body { border-color: #c9a227; }
+  .song-list { padding: 6px 10px 10px; }
+  .song-row { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 8px; background: none; border: none; border-bottom: 1px solid rgba(201,162,39,0.1); cursor: pointer; text-align: left; border-radius: 10px; transition: background 0.2s; font-family: inherit; }
+  .song-row:last-child { border-bottom: none; }
+  .song-row:hover, .song-row:active { background: rgba(201,162,39,0.08); }
+  .song-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.3); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #c9a227; flex-shrink: 0; }
+  .song-title { flex: 1; font-family: 'Noto Sans Telugu', 'Open Sans', sans-serif; font-size: 15px; font-weight: 600; color: #fff; line-height: 1.45; }
+  .song-go { color: #c9a227; font-size: 18px; flex-shrink: 0; }
+
+  .viewer { position: fixed; inset: 0; z-index: 2500; background: linear-gradient(180deg, #0a1228 0%, #0d1b3e 40%, #0a1228 100%); display: none; flex-direction: column; }
+  .viewer.open { display: flex; }
+  .v-top { flex-shrink: 0; padding: 12px 14px 10px; border-bottom: 1px solid rgba(201,162,39,0.25); background: rgba(10,18,40,0.96); }
+  .v-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 720px; margin: 0 auto; }
+  .v-btn { background: rgba(201,162,39,0.12); border: 1.5px solid rgba(201,162,39,0.4); color: #c9a227; border-radius: 20px; padding: 7px 13px; font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; line-height: 1; }
+  .v-btn:hover { background: rgba(201,162,39,0.22); }
+  .v-count { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c9a227; }
+  .v-size { display: flex; gap: 6px; }
+  .v-title { max-width: 720px; margin: 10px auto 0; font-family: 'Noto Sans Telugu', sans-serif; font-size: 18px; font-weight: 700; color: #fff; line-height: 1.45; text-align: center; }
+  .v-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 22px 20px 40px; }
+  .lyrics { max-width: 720px; margin: 0 auto; font-family: 'Noto Sans Telugu', sans-serif; font-size: var(--lyr, 19px); line-height: 1.85; color: #f3f1ea; }
+  .lyrics .ln { margin: 0; }
+  .lyrics .gap { height: 0.9em; }
+  .lyrics .lbl { color: #e8c45a; font-weight: 700; }
+  .lyrics .vn { color: #c9a227; font-weight: 700; margin-right: 4px; }
+  .lyrics .ch { color: #c9a227; font-style: italic; font-size: 0.85em; white-space: nowrap; }
+  .lyrics .rep { color: rgba(232,196,90,0.85); font-size: 0.8em; }
+  .v-bottom { flex-shrink: 0; display: flex; justify-content: space-between; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(201,162,39,0.25); background: rgba(10,18,40,0.96); }
+  .v-bottom .v-btn { flex: 1; padding: 12px; font-size: 13px; }
+  .v-btn[disabled] { opacity: 0.3; cursor: default; }
+
+  /* LOCATION */
+  .loc { padding: 16px; display: flex; gap: 14px; align-items: flex-start; }
+  .loc-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .loc-addr { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .loc-actions { display: flex; gap: 8px; flex-wrap: wrap; padding: 0 16px 16px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(201,162,39,0.12); border: 1.5px solid rgba(201,162,39,0.4); border-radius: 20px;
+    padding: 8px 14px; color: #c9a227; font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; text-decoration: none; transition: background 0.2s;
+  }
+  .chip:hover { background: rgba(201,162,39,0.22); }
+
+  /* RSVP */
+  .rsvp-block { background: #0d1b3e; padding: 24px 20px; text-align: center; border-radius: 16px; margin-top: 4px; }
+  .rsvp-pill {
+    display: inline-block; background: rgba(201,162,39,0.15); border: 1px solid rgba(201,162,39,0.4);
+    color: #e8c45a; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    padding: 4px 14px; border-radius: 20px; margin-bottom: 10px;
+  }
+  .rsvp-heading { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 900; color: #fff; letter-spacing: 1px; margin-bottom: 4px; }
+  .rsvp-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 18px; line-height: 1.5; }
+  .rsvp-btn {
+    display: inline-block; background: linear-gradient(135deg, #c9a227, #a07c10); color: #fff;
+    font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; letter-spacing: 2px;
+    text-decoration: none; text-transform: uppercase; padding: 12px 40px; border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(201,162,39,0.35); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .rsvp-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,162,39,0.5); }
+
+  .closing { text-align: center; padding: 8px 24px 0; }
+  .closing p { font-size: 13px; color: #0d1b3e; font-style: italic; line-height: 1.5; }
+  .closing span { display: block; margin-top: 4px; font-size: 10px; font-weight: 700; letter-spacing: 3px; color: #a07c10; text-transform: uppercase; font-style: normal; }
+
+  /* DRAWER */
+  .drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); z-index: 1001; pointer-events: none; transition: background 0.45s cubic-bezier(0.16,1,0.3,1); }
+  .drawer-overlay.open { background: rgba(0,0,0,0.5); pointer-events: all; }
+  .drawer {
+    position: fixed; bottom: 0; left: 0; right: 0; max-width: 680px; margin: 0 auto;
+    background: #0d1b3e; border-radius: 24px 24px 0 0; z-index: 1002; transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); max-height: 82vh; display: flex; flex-direction: column;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.4);
+  }
+  .drawer.open { transform: translateY(0); }
+  .drawer-handle { width: 40px; height: 4px; background: rgba(201,162,39,0.4); border-radius: 2px; margin: 14px auto 0; flex-shrink: 0; }
+  .drawer-header { padding: 16px 24px 14px; border-bottom: 1px solid rgba(201,162,39,0.15); display: flex; align-items: center; justify-content: space-between; }
+  .drawer-title { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #c9a227; text-transform: uppercase; }
+  .drawer-close { background: none; border: none; color: rgba(255,255,255,0.4); font-size: 22px; cursor: pointer; line-height: 1; }
+  .drawer-close:hover { color: #fff; }
+  .list-body { overflow-y: auto; padding: 8px 16px 32px; flex: 1; }
+  .list-item {
+    display: flex; align-items: center; justify-content: space-between; padding: 16px 14px; border-radius: 12px;
+    text-decoration: none; transition: background 0.2s, opacity 0.35s, transform 0.35s;
+    border-bottom: 1px solid rgba(201,162,39,0.08);
+  }
+  .list-item:last-child { border-bottom: none; }
+  .list-item:hover { background: rgba(201,162,39,0.08); }
+  .drawer:not(.open) .list-item { opacity: 0; transform: translateY(10px); }
+  .list-item-left { display: flex; align-items: center; gap: 14px; }
+  .list-num {
+    width: 28px; height: 28px; border-radius: 50%; background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.25);
+    display: flex; align-items: center; justify-content: center; font-size: 13px; color: #c9a227; flex-shrink: 0;
+  }
+  .list-name { font-size: 15px; font-weight: 600; color: #fff; line-height: 1.3; }
+  .list-name-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .list-arrow { color: #c9a227; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+
+  @keyframes gentleGlow {
+    0%, 100% { filter: drop-shadow(0 0 4px rgba(201,162,39,0.3)); }
+    50% { filter: drop-shadow(0 0 12px rgba(201,162,39,0.8)) drop-shadow(0 0 20px rgba(201,162,39,0.3)); }
+  }
+  @media (max-width: 480px) {
+    .verse-text { font-size: 16px; }
+    .top-bar { padding: 12px 12px; gap: 8px; }
+    .top-bar-label { font-size: clamp(9px, 2.65vw, 13px); letter-spacing: clamp(0.2px, 0.2vw, 1.5px); }
+    .share-btn { padding: 6px 10px; font-size: 10px; letter-spacing: 0.5px; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="wrap">
+  <div class="top-bar">
+    <div>
+      <p class="top-bar-label">✝︎ Thanksgiving Family Retreat 2026</p>
+      <p class="countdown" id="countdown">Nov 26 – 28, 2026 · Rincon, GA</p>
+    </div>
+    <button class="share-btn" onclick="shareEvent()" aria-label="Share">&#8679;<span class="share-txt"> Share</span></button>
+  </div>
+</div>
+<div class="share-toast" id="share-toast">Link copied! 🙌 🙏</div>
+
+<!-- SONGS -->
+<div class="wrap" id="songs">
+  <div class="sched-header songs-head" id="songs-header" onclick="toggleSongs()">
+    <div class="sched-left">
+      <div class="sched-icon"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="#f3dc8c" d="M9 3v10.55A4 4 0 1 0 11 17V7h8v6.55A4 4 0 1 0 21 17V3H9z"/></svg></div>
+      <div>
+        <p class="sched-title-label">✝ Sing Along</p>
+        <p class="sched-title">Song Book <span class="songs-pill">15 SONGS</span></p>
+        <p class="sched-sub">ఆరాధన గీతములు · Tap to open lyrics</p>
+      </div>
+    </div>
+    <span class="sched-arrow" id="songs-arrow">&#10148;</span>
+  </div>
+  <div class="sched-body" id="songs-body">
+    <div class="song-list">
+      <button class="song-row" onclick="openSong(1)"><span class="song-num">1</span><span class="song-title">అడవి చెట్ల నడుమ</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(2)"><span class="song-num">2</span><span class="song-title">అత్యున్నత సింహాసనముపై</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(3)"><span class="song-num">3</span><span class="song-title">పూర్ణ హృదయ స్తోత్రముల్</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(4)"><span class="song-num">4</span><span class="song-title">యేసు ప్రభును స్తుతించుట</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(5)"><span class="song-num">5</span><span class="song-title">జయమనిపాడు జయమనిపాడు ప్రభుయేసునకే</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(6)"><span class="song-num">6</span><span class="song-title">పాడెద దేవా</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(7)"><span class="song-num">7</span><span class="song-title">పరిశుద్ధ పరిశుద్ధ పరిశుద్ధ ప్రభువా</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(8)"><span class="song-num">8</span><span class="song-title">క్రీస్తు యేసు దయాళు ప్రభు</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(9)"><span class="song-num">9</span><span class="song-title">నా ప్రాణ ప్రియుడా యేసురాజా</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(10)"><span class="song-num">10</span><span class="song-title">అర్పింతు స్తుతుల్ నీ సిలువలోన జూపిన నీ ప్రేమకై</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(11)"><span class="song-num">11</span><span class="song-title">ఓ నా హృదయమా పాడుమా క్రొత్త గీతం ప్రభునకే</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(12)"><span class="song-num">12</span><span class="song-title">మహాఘనుడు, మహోన్నతుడు, పరిశుద్ధుడు, నిత్యనివాసి</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(13)"><span class="song-num">13</span><span class="song-title">పావనుడా మా ప్రభువా</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(14)"><span class="song-num">14</span><span class="song-title">ఆరాధించెద నిను మది పొగడెద</span><span class="song-go">&rsaquo;</span></button>
+      <button class="song-row" onclick="openSong(15)"><span class="song-num">15</span><span class="song-title">దూతగణములెల్ల ఆరాధించిరిగా</span><span class="song-go">&rsaquo;</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- FLYER -->
+<div class="wrap">
+  <div class="card">
+    <div class="card-header"><span class="icon">📜</span><span class="label">Event Flyer</span></div>
+    <img class="flyer-img" src="flyer.jpg" alt="Thanksgiving Family Retreat 2026 flyer — Nov 26–28 at Ebenezer Retreat Center, Rincon, GA" onclick="openLightbox()">
+    <div class="card-footer">
+      <p>Ebenezer Retreat Center · Nov 26 – 28</p>
+      <button onclick="openLightbox()">⤢ View Full Size</button>
+    </div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()"><img src="flyer.jpg" alt="Flyer enlarged"></div>
+
+<!-- THEME VERSE -->
+<div class="wrap">
+  <div class="card soft">
+    <div class="verse">
+      <p class="verse-ref">1 Chronicles 16:29</p>
+      <p class="verse-text">“<em>Worship</em> the <em>Lord</em> in the beauty of holiness”</p>
+      <p class="verse-orn">✦ ✦ ✦</p>
+    </div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<div class="wrap">
+  <div class="card soft">
+    <div class="card-header"><span class="icon">✨</span><span class="label">What to Expect</span></div>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-icon">📖</div><p class="pillar-name">Worship</p><p class="pillar-text">Exalt the Lord together in spirit and truth.</p></div>
+      <div class="pillar"><div class="pillar-icon">🤝</div><p class="pillar-name">Fellowship</p><p class="pillar-text">Strengthen bonds. Encourage one another in love.</p></div>
+      <div class="pillar"><div class="pillar-icon">🏞️</div><p class="pillar-name">Rest &amp; Renewal</p><p class="pillar-text">Be refreshed in God’s creation and His presence.</p></div>
+      <div class="pillar"><div class="pillar-icon">🍁</div><p class="pillar-name">Thanksgiving</p><p class="pillar-text">Give thanks to the Lord, for He is good; His steadfast love endures forever. (Ps 107:1)</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="wrap">
+  <div class="sched-header" id="sched-header" onclick="toggleSchedule()">
+    <div class="sched-left">
+      <div class="sched-icon">📅</div>
+      <div>
+        <p class="sched-title-label">Thanksgiving Weekend</p>
+        <p class="sched-title">Nov 26 – Nov 28, 2026</p>
+        <p class="sched-sub">Arrive Thu 3 PM &middot; Depart Sat 3 PM</p>
+      </div>
+    </div>
+    <span class="sched-arrow" id="sched-arrow">&#10148;</span>
+  </div>
+  <div class="sched-body" id="sched-body">
+    <div class="sched-inner">
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot active"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">THU · NOV 26 · 3:00 PM</p>
+          <p class="sched-name">🚗 Arrival &amp; Check-in</p>
+          <p class="sched-speaker">Thanksgiving Day — settle in at Ebenezer Retreat Center</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">FRI · NOV 27 · ALL DAY</p>
+          <p class="sched-name">🙏 Worship, Fellowship &amp; Rest</p>
+          <p class="sched-speaker">A time to worship, give thanks, and grow closer to the Lord</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">SAT · NOV 28 · 3:00 PM</p>
+          <p class="sched-name">👋 Departure</p>
+          <p class="sched-speaker">Safe travels home</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATION -->
+<div class="wrap">
+  <div class="card soft">
+    <div class="card-header"><span class="icon">📍</span><span class="label">Location</span></div>
+    <div class="loc">
+      <div class="sched-icon">⛪</div>
+      <div>
+        <p class="loc-name">Ebenezer Retreat Center</p>
+        <p class="loc-addr">219 Ebenezer Church Rd<br>Rincon, GA 31326</p>
+      </div>
+    </div>
+    <div class="loc-actions">
+      <a class="chip" href="https://www.google.com/maps/dir/?api=1&destination=219+Ebenezer+Church+Rd,+Rincon,+GA+31326" target="_blank" rel="noopener">🧭 Directions</a>
+      <a class="chip" href="https://www.newebenezer.org/" target="_blank" rel="noopener">🌐 Website</a>
+    </div>
+  </div>
+</div>
+
+<div class="closing">
+  <p>“Come, let us bow down in worship, let us kneel before the Lord our Maker.”<span>Psalm 95:6</span></p>
+</div>
+
+<!-- LYRICS VIEWER -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true">
+  <div class="v-top">
+    <div class="v-bar">
+      <button class="v-btn" onclick="closeSong()">&#x2715; Close</button>
+      <span class="v-count" id="v-count"></span>
+      <div class="v-size"><button class="v-btn" onclick="fontStep(-1)" aria-label="Smaller text">A&minus;</button><button class="v-btn" onclick="fontStep(1)" aria-label="Larger text">A+</button></div>
+    </div>
+    <p class="v-title" id="v-title"></p>
+  </div>
+  <div class="v-body" id="v-body"><div class="lyrics" id="lyrics"></div></div>
+  <div class="v-bottom">
+    <button class="v-btn" id="v-prev" onclick="stepSong(-1)">&lsaquo; Previous</button>
+    <button class="v-btn" id="v-next" onclick="stepSong(1)">Next &rsaquo;</button>
+  </div>
+</div>
+
+<!-- CONTACT DRAWER -->
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-header">
+    <span class="drawer-title">📞 Contact</span>
+    <button class="drawer-close" onclick="closeDrawer()">&#x2715;</button>
+  </div>
+  <div class="list-body">
+    <a class="list-item" href="tel:+19045091465">
+      <div class="list-item-left"><div class="list-num">📞</div><div><p class="list-name">Bro. Ebenezer G</p><p class="list-name-sub">(904) 509-1465</p></div></div>
+      <span class="list-arrow">CALL</span>
+    </a>
+    <a class="list-item" href="tel:+13865464882">
+      <div class="list-item-left"><div class="list-num">📞</div><div><p class="list-name">Bro. John Philemon</p><p class="list-name-sub">(386) 546-4882</p></div></div>
+      <span class="list-arrow">CALL</span>
+    </a>
+    <a class="list-item" href="tel:+19802055903">
+      <div class="list-item-left"><div class="list-num">📞</div><div><p class="list-name">Bro. Ranjan</p><p class="list-name-sub">(980) 205-5903</p></div></div>
+      <span class="list-arrow">CALL</span>
+    </a>
+  </div>
+</div>
+
+<div id="fab-wrap" style="position:fixed;bottom:28px;right:8px;z-index:1000;cursor:pointer;animation:gentleGlow 2s ease-in-out infinite;border-radius:50%;" onclick="openDrawer()" aria-label="Contact">
+  <svg width="110" height="110" viewBox="0 0 110 110" style="opacity:0.95;">
+    <defs>
+      <radialGradient id="fabG" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="#e8c45a"/><stop offset="100%" stop-color="#a07c10"/></radialGradient>
+      <filter id="fabS"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#c9a227" flood-opacity="0.5"/></filter>
+      <path id="bot-arc" d="M9,55 a46,46 0 0,0 92,0" fill="none"/>
+    </defs>
+    <circle cx="55" cy="55" r="36" fill="url(#fabG)" filter="url(#fabS)"/>
+    <text x="55" y="66" text-anchor="middle" font-size="30" fill="#0d1b3e">📞</text>
+    <text font-size="10" font-family="Arial Black,sans-serif" font-weight="900" fill="#c9a227" stroke="#000" stroke-width="4" paint-order="stroke" letter-spacing="2">
+      <textPath href="#bot-arc" startOffset="50%" text-anchor="middle">CONTACT</textPath>
+    </text>
+  </svg>
+</div>
+
+<script>
+function toggleSchedule() {
+  var body = document.getElementById('sched-body'), arrow = document.getElementById('sched-arrow'), header = document.getElementById('sched-header');
+  if (!header.classList.contains('open')) { body.style.maxHeight = '600px'; arrow.style.transform = 'rotate(90deg)'; header.classList.add('open'); }
+  else { body.style.maxHeight = '0'; arrow.style.transform = 'rotate(0deg)'; header.classList.remove('open'); }
+}
+function openDrawer() {
+  var items = document.querySelectorAll('#drawer .list-item');
+  items.forEach(function (el, i) { el.style.transitionDelay = (0.12 + i * 0.06) + 's'; });
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  document.querySelectorAll('#drawer .list-item').forEach(function (el) { el.style.transitionDelay = '0s'; });
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function openLightbox() { document.getElementById('lightbox').classList.add('open'); }
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeDrawer(); closeLightbox(); closeSong(); } });
+
+function shareEvent() {
+  var url = location.href;
+  function copy() {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(url).then(function () {
+      var t = document.getElementById('share-toast'); t.classList.add('show');
+      setTimeout(function () { t.classList.remove('show'); }, 2500);
+    }).catch(function(){});
+  }
+  if (navigator.share) {
+    navigator.share({ title: 'Thanksgiving Family Retreat 2026', text: '✝️ Thanksgiving Family Retreat · Nov 26–28, 2026 · Ebenezer Retreat Center, Rincon, GA', url: url })
+      .catch(function (e) { if (!e || e.name !== 'AbortError') copy(); });
+  } else { copy(); }
+}
+
+
+// ── SONGS ──
+var SONGS = [{"n": 1, "title": "అడవి చెట్ల నడుమ", "lyrics": "అడవి చెట్ల నడుమ\nఒక జల్దరు వృక్షం వలె\nపరిశుద్ధుల సమాజములో\nయేసు ప్రజ్వలించుచున్నాడు (2)\nకీర్తింతున్ నా ప్రభుని\nజీవ కాలమెల్ల ప్రభు యేసుని\nకృతజ్ఞతతో స్తుతించెదను (2)\n\nషారోను రోజా ఆయనే\nలోయ పద్మమును ఆయనే\nఅతిపరిశుద్ధుడు ఆయనే\nపదివేలలో అతిశ్రేష్టుడు (2) ||కీర్తింతున్||\n\nపరిమళ తైలం నీ నామం\nదాని వాసన వ్యాపించెగా\nనింద శ్రమ సంకటంలో\nనను సుగంధముగా చేయున్ (2) ||కీర్తింతున్||\n\nమనోవేదన సహించలేక\nసిలువ వైపు నే చూడగా\nలేవనెత్తి నన్నెత్తుకొని\nభయపడకుమని అంటివి (2) ||కీర్తింతున్||\n\nనా త్రోవకు దీపం నీవే\nనా బ్రతుకుకు జీవం నీవే\nనా సేవకు బలము నీవే\nనా ఆత్మకాదరణ నీవే (2) ||కీర్తింతున్||\n\nఘనమైన నా ప్రభువా\nనీ రక్త ప్రభావమున\nనా హృదయము కడిగితివి\nనీకే నా స్తుతి ఘనత (2) ||కీర్తింతున్||\n\nనీవు నా దాసుడవనియు\nఏర్పరచుకొంటినని\nనేనే నీ దేవుడనని\nభయపడకు-మని అంటివి (2) ||కీర్తింతున్||"}, {"n": 2, "title": "అత్యున్నత సింహాసనముపై", "lyrics": "అత్యున్నత సింహాసనముపై – ఆసీనుడవైన దేవా\nఅత్యంత ప్రేమా స్వరూపివి నీవే\nఆరాధింతును నిన్నే (2)\nఆహాహా.. హల్లెలూయా – ఆహాహా.. హల్లెలూయా (3)\nఆహాహా.. హల్లెలూయా – ఆహాహా.. ఆమెన్\n\nఆశ్చర్యకరుడా స్తోత్రం\nఆలోచనకర్త స్తోత్రం\nబలమైన దేవా నిత్యుడవగు తండ్రి\nసమాధాన అధిపతి స్తోత్రం (2) ||ఆహాహా||\n\nకృపా సత్య సంపూర్ణుడా స్తోత్రం\nకృపతో రక్షిించితివే స్తోత్రం\nనీ రక్తమిచ్చి విమోచించినావు\nనా రక్షణకర్త స్తోత్రం (2) ||ఆహాహా||\n\nస్తుతులపై ఆసీనుడా స్తోత్రం\nసంపూర్ణుడా నీకు స్తోత్రం\nమా ప్రార్థనలు ఆలకించువాడా\nమా ప్రధాన యాజకుడా స్తోత్రం (2) ||ఆహాహా||\n\nమృత్యుంజయుడా స్తోత్రం\n\nమహాఘనుడా స్తోత్రం\nమమ్మును కొనిపోవ త్వరలో రానున్న\nమేఘ వాహనుడా స్తోత్రం (2) ||ఆహాహా||\n\nఆమెన్ అనువాడా స్తోత్రం\nఅల్ఫా ఒమేగా స్తోత్రం\nఅగ్ని జ్వాలలవంటి కన్నులు గలవాడా\nఅత్యున్నతుడా స్తోత్రం (2) ||ఆహాహా||"}, {"n": 3, "title": "పూర్ణ హృదయ స్తోత్రముల్", "lyrics": "పల్లవి:\nపూర్ణ హృదయ స్తోత్రముల్ - చెల్లించెద ప్రభునకే (2)\n\n1. ఏర్పరచుకోలేదు నేను - ప్రభువే నన్నేర్పరచుకొనెన్ (2)\nపాపినైన నాకు - ఆయనే రక్షణ నిచ్చెన్ (2)\nపరలోక రాజ్యములో - భాగమునిచ్చెన్ (2)\n\n2. నా హృదయ పాపమును - తన రక్తములో కడిగెన్\nమృతమైన నా ఆత్మను - జీవింపజేసె ప్రభు\nఉచితంబుగానే పొందితి - నిత్య జీవం\n\n3. నే పాప బంధములో నుండ - హృదయమశాంతితో నిండె\nనా పాప మొప్పుకొనగా - కడిగెను రక్తములో\nశాంతి ఆనందముతో - నన్ను నింపెన్\n\n4. వర్ణింపజాలను నేను - ప్రభు యొక్క గొప్ప ప్రేమన్\nపాపిని నను ప్రేమించెన్ - మరువలేనా ప్రేమను\nప్రశంసలను పాడెద - ప్రభునకే\n\n5. నిత్య రాజ్యము నన్ను చేర్చ - నిత్య నిబంధన చేసె\nసుఖదుఃఖములందైన - ముగింతు నాదు పరుగున్\nస్థిరముగ నుందు పరమును చేరువరకు"}, {"n": 4, "title": "యేసు ప్రభును స్తుతించుట", "lyrics": "పల్లవి: యేసు ప్రభును స్తుతించుట - యెంతో యెంతో మంచిది (2)\nహల్లెలూయ - హల్లెలూయ - హల్లెలూయ - హల్లెలూయ (2)\n\n1. మహోన్నతుడా నీనామమును 2- స్తుతించుటయే బహుమంచిది (2)\n\n2. విలువైన రక్తము సిలువలో కార్చి - కలుషాత్ముల మమ్ము ప్రభు కడిగెను ||హ||\n\n3. ఎంతో గొప్ప రక్షణ నిచ్చి - వింతైన జనముగా మము జేసెను ||హ||\n\n4. మా శైలము మా కేడెము - మా కోటయు మా ప్రభువే ||హ||\n\n5. ఉన్నత దుర్గము రక్షణ శృంగము - రక్షిించువాడు మన దేవుడే ||హ||\n\n6. అతిసుందరుడు అందరిలోన - అతి కాంక్షణీయుడు అతి ప్రియుడు ||హ||\n\n7. రాత్రింబవళ్ళు వేనోళ్ళతోను - స్తుతించుటయే బహు మంచిది ||హ||"}, {"n": 5, "title": "జయమనిపాడు జయమనిపాడు ప్రభుయేసునకే", "lyrics": "పల్లవి: జయమనిపాడు జయమనిపాడు ప్రభుయేసునకే\nమహాదేవుండు విశ్వవిధాత రక్షకుడాయనే2\n\n1. ఆది అంతము అల్ఫ ఓమేగ ఆయనే ప్రభువు (2)\nఆయన యేగా రానున్నవాడు శక్తిమంతుడు (2) ||జయ||\n\n2. ప్రభు యేసునందు మమ్మును పిలచి ఏర్పరచుకొనెను\nప్రేమతో మమ్ము పవిత్ర పరచి నిర్దోషులుగ తీర్చె ||జయ||\n\n3. యేసులో మమ్ము రక్తముద్వారా విమోచించితివి\nయెంతో కృపతో మమ్మును కడిగి మన్నించి నావుగా ||జయ||\n\n4. యేసులో మాకు యేశిక్షలేదు భయము బాపెగా\nవాసిగ మరణబలము తొలగించి పాపము బాపెగ ||జయ||\n\n5. క్రీస్తులో మమ్ము నూతన పరచి తండ్రిని తెలిపెను\nకరుణించి మమ్ము అంగీకరించె ఎంతో అద్భుతము ||జయ||\n\n6. మా స్వాస్థ్యమునకు సంచకరువుగా ఆత్మ ముద్ర నిచ్చెను\nమనోనేత్రములు వెలిగించి మాకు గొప్ప నిరీక్షణ ని చ్చె ||జయ||\n\n7. ప్రభు క్రీస్తులో వాడబారని స్వాస్థ్యముగ నైతిమి\nపరిశుద్ధులలో మహిమైశ్వరంబు యెంతో గొప్పది ||జయ||"}, {"n": 6, "title": "పాడెద దేవా", "lyrics": "పల్లవి: పాడెద దేవా - నీ కృపలన్ - నూతన గీతములన్\nస్తోత్రము చెల్లింతున్ - స్తుతి స్తోత్రము చెల్లింతున్ (2)\n\n1. భూమి పునాదులు వేయకముందే యేసులో చేసితివి (2)\nప్రేమ పునాదులు వేసితివి దీనుని బ్రోచితివి - ఈ దీనుని బ్రోచితివి ||పాడె||\n\n2. ప్రవిమల రక్తము కలువరి సిలువలో ఖలునకు నిచ్చితివి\nప్రేమ కృపా మహదైశ్వర్యములతో పాపము తుడిచితివి\nనా పాపము తుడిచితివి ||పాడె||\n\n3. పాపము శాపము నరకపు వేదన మరి తొలగించితివి\nఅపరాధములచే చచ్చిన నన్నుధర బ్రతికించితివి\nనన్ను బ్రతికించితివి ||పాడె||\n\n4. దేవుని రాజ్యపు వారసుడనుగా క్రీస్తులో చేసితివి\nచీకటి రాజ్యపు శక్తుల నుండి నను విడిపించితివి\nచెర నను విడిపించితివి ||పాడె||\n\n5. ముద్రించితివి శుద్ధాత్మతో నన్ను భద్రము చేసితివి\nసత్యస్వరూప నిత్యనివాసి సొత్తుగా చేసితివి\nనీ సొత్తుగ చేసితివి ||పాడె||\n\n6. అన్యుడనై నిన్ను ఎరుగక యున్నను ధన్యుని చేసితివి\nప్రియ పట్టణ పౌరుల సేవింపను వరముల నొసగితివి\nకృప వరముల నొసగితివి ||పాడె||"}, {"n": 7, "title": "పరిశుద్ధ పరిశుద్ధ పరిశుద్ధ ప్రభువా", "lyrics": "1. పరిశుద్ధ పరిశుద్ధ పరిశుద్ధ ప్రభువా - వరదూతలైన నిన్ వర్ణింప గలరా\n\n2. పరిశుద్ధ జనకుడా పరమాత్మ రూపుడా - నిరుపమ బలబుద్ధి నీతి ప్రభావా\n\n3. పరిశుద్ధ తనయుడా నరరూపధారుడా - నరులను రక్షిించు కరుణా నముద్రా\n\n4. పరిశుద్ధమగు నాత్మ వరములిడు నాత్మ - పరమానంద ప్రేమ భక్తుల కిడుమా\n\n5. జనక కుమారాత్మలను నేక దేవ - ఘన మహిమ చెల్లును దనర నిత్యముగా"}, {"n": 8, "title": "క్రీస్తు యేసు దయాళు ప్రభు", "lyrics": "పల్లవి: క్రీస్తు యేసు దయాళు ప్రభు - నీవే సృష్టికర్తవు\nనీవే మా రక్షకుడవని హల్లెలూయ పాడెదం (2)\n\n1. పాప జగాన - జన్మించితివి - పేద గృహాన - పెరిగితివి -\nసంకట కష్టములనుభవించి మమ్ము రక్షిించితివి (2)\nప్రియ యేసు మమ్ము రక్షిించితివి (2) - మమ్ము రక్షిించితివి (4) ||క్రీస్తు||\n\n2. జీవిత నావా - తుఫాను చేత - తల్లడిల్లగ - ఒక్క మాటతో -\nఆజ్ఞాపించి తుఫాను నాపి - దరికి జేర్చితివి\nప్రియ యేసు దరికి జేర్చితివి - దరికి జేర్చితివి ||క్రీస్తు||\n\n3. ఎన్నో విధాల - పోనట్టి నాదు - పాప రోగము - నీ వస్త్రమును -\nముట్టినంతనే - అద్భుతముగ - నివారణాయెను\nప్రియ యేసు నివారణాయెను - నివారణాయెను ||క్రీస్తు||"}, {"n": 9, "title": "నా ప్రాణ ప్రియుడా యేసురాజా", "lyrics": "పల్లవి: నా ప్రాణ ప్రియుడా యేసురాజా- అర్పింతును నా హృదయార్పణ\nవిరిగి నలిగిన ఆత్మతోను - హృదయపూర్వక ఆరాధనతో - సత్యముగా\n\n1. అధ్భుతకరుడా ఆలోచన - ఆశ్చర్య సమాధాన ప్రభువా (2)\nబలవంతుడా బహు ప్రియుడా\nమనోహరుడా మహిమరాజా - స్తుతించెదన్ ||నా ప్రా||\n\n2. విమోచన గానములతో - సౌందర్య ప్రేమ స్తుతులతో\nనమస్కరించి ఆరాధింతున్\nహర్షింతును నే పాడెదను నా ప్రభువా ||నా ప్రా||\n\n3. గర్భమున పుట్టిన బిడ్డను - కరుణింపక తల్లి మరచునా\nమరచిన గాని నీవెన్నడు\nమరువవు విడివవు ఎడబాయవు - కరుణారాజా ||నా ప్రా||\n\n4. రక్షణాలంకారములను - అక్షయమగు నీ యాహారమున్\nరక్షకుడా నా కొసగితివి\nదీక్షతో నిన్ను వీక్షిించుచు - స్తుతింతును ||నా ప్రా||\n\n5. నీ నీతిని నీ రక్షణను - నా పెదవులు ప్రకటించును\nకృతజ్ఞతా స్తుతుల తోడ\nనీ ప్రేమను నే వివరింతును - విమోచకుడా ||నా ప్రా||\n\n6. వాగ్దానముల్ నాలో నెరవేరెన్ - విమోచించి నా కిచ్చితివే\nపాడెదను ప్రహర్షింతును\nహల్లెలూయ హల్లెలూయ - హల్లెలూయ ||నా ప్రా||"}, {"n": 10, "title": "అర్పింతు స్తుతుల్ నీ సిలువలోన జూపిన నీ ప్రేమకై", "lyrics": "పల్లవి: అర్పింతు స్తుతుల్ నీ సిలువలోన జూపిన నీ ప్రేమకై\nమరణమొంది సమాధి నుండి మరల లేచితివి (2)\n\n1. తలను ముండ్ల కిరీటము బొంది కాళ్ల చేతులు గ్రుచ్చబడి (2)\nబలియైతివి గొఱ్ఱెపిల్ల వలె నా కొరకే ఓ ప్రభువా (2) ||అర్పింతు||\n\n2. నీ చింతవలన నాకు శాంతి కల్గె నీ సిలువ వలన కిరీటం\nనీ మరణమే నా జీవమాయె నీ ప్రేమ గొప్పదెంతో ||అర్పింతు||\n\n3. నేను జూచెడి మహిమ స్వర్గము నావలన కలుగదు\nఆనంద బాష్పములతోనే స్తుతింతు - ఈ ధనము నా కొరకే ||అర్పింతు||\n\n4. నీ సిలువలో తొలగె నా నీచ పాపము నే ద్వేషింతు నన్నియున్\nనీ సింహాసనము నాలోన యుంచుము నిన్ను నే స్తుతింతును ||అర్పింతు||"}, {"n": 11, "title": "ఓ నా హృదయమా పాడుమా క్రొత్త గీతం ప్రభునకే", "lyrics": "పల్లవి: ఓ నా హృదయమా పాడుమా క్రొత్త గీతం ప్రభునకే\nయెంతో ఆనందం వర్ణింపజాల (2) - యెంతో ప్రభువు ప్రేమ\nహృదయమా పాడుమా\n\n1. క్రీస్తునందు స్వాస్థ్యము చేసె - తన సంకల్పం అద్భుతమది (2)\nభూమి పునాది వేయక మునుపే - ఏర్పరచుకొనెను\nహృదయమా పాడుమా ||ఓ||\n\n2. క్రీస్తునందు నన్ను క్షమించి - రక్తము కార్చి కడిగెను నన్ను\nవిడిపించి నన్ను నీతిగా తీర్చి - పవిత్ర పరచెను\nహృదయమా పాడుమా ||ఓ||\n\n3. క్రీస్తులో నన్ను దరికి పిల్చి - చేర్చి క్రొత్త వ్యక్తిగ జేయ\nకూల్చెను ప్రభు ఆ మధ్యపు గోడ - కోరి చేరియుండెను\nహృదయమా పాడుమా ||ఓ||\n\n4. క్రీస్తులోయున్న యే శిక్షలేదు - స్వాతంత్ర్యము క్రీస్తునందే\nక్రీస్తే పరమున కూర్చుండబెట్టి - క్రొత్త సృష్టిగ జేసె\nహృదయమా పాడుమా ||ఓ||\n\n5. క్రీస్తులో దొరికే ఆశీర్వాదం - శాంతి ఆనందం దొరికెను మనకు\nక్రీస్తు మహిమ జయమునకై పిలిచె - హల్లెలూయ పాటను\nహృదయమా పాడుమా ||ఓ||"}, {"n": 12, "title": "మహాఘనుడు, మహోన్నతుడు, పరిశుద్ధుడు, నిత్యనివాసి", "lyrics": "పల్లవి: మహాఘనుడు, మహోన్నతుడు, పరిశుద్ధుడు, నిత్యనివాసి (2)\nమా సామర్థ్యము పునరుత్థానము మా జీవము మా రక్షణనిధి (2)\n\n1. ఉన్నత పరిశుద్ధ స్థలములలో నివసించువాడు పరిశుద్ధుడు (2)\nఅయినను - నలిగిన వినయంపు దీనమనస్సులో నివసించును జీవించును (2) ||మహా||\n\n2. దినమెల్ల ప్రభుకై వధియింపబడి యున్నట్టి గొఱ్ఱెలము\nఅయినను - ప్రేమించినవాని ప్రేమను బట్టియే పొందితిమి విజయమును ||మహా||\n\n3. మోసము, శిక్షయు, దుఃఖమును, దరిద్రత కలిగియున్నాము\nఅయినను - సత్యము, జీవము, సంతోషమును ఐశ్వర్యముల్ పొందితిమి ||మహా||\n\n4. పడిపోయి మేముంటిమి అంధకారమందుంటిమిగా\nఅయినను - తిరిగి లేతుము యెహోవాయే మా వెలుగు మా రక్షణ ||మహా||\n\n5. మన క్రీస్తును బట్టి యెల్లప్పుడు నిందకు పాత్రులమైతిమి\nఅయినను - ఎల్లప్పుడు వూరేగించును మమ్ము విజయముతో స్తోత్రములు ||మహా||"}, {"n": 13, "title": "పావనుడా మా ప్రభువా", "lyrics": "పల్లవి: పావనుడా మా ప్రభువా\nనీ రక్షణకై స్తోత్రములు (2)\n\n1. అత్యున్నతమైన దేవా - సింహాసనాసీనుడవు (2)\nఎంతో గొప్పది నీ మహిమ - వర్ణింపజాలను నేను (2) ||పావ||\n\n2. పాపపు కుష్ఠుతో పడి చెడిన - ఈపాపిని కరుణించితివి\nనా పాపపు డాగులు కడిగి - పరిశుద్ధుని చేసిన విభుడా ||పావ||\n\n3. అపవిత్రమగు పెదవులతో - కపటముగా జీవించితిని\nఅపరాధి నోటిని తెరచి - స్తుతి గీతము నొసగిన ప్రభువా ||పావ||\n\n4. నీ క్రయధన మధికము ఎంతో - నా కర్త నిను ప్రణుతింతు\nనా కందరి కంటె ఘనుడా - ఓ కల్వరి నాథా యేసు ||పావ||\n\n5. మహిమ పరతును ప్రభు యేసు - మహదానందముతో నిరతం\nమహోన్నతుడా ప్రభు నిన్ను - మహిమలో ఆరాధించెదను ||పావ||\n\n6. నా కనులతో నిను చూచెదను - ఆకసమున దూతల మధ్య\nరక్షక త్వరగా రారమ్ము - అక్షయుడా నీకే స్తుతులు ||పావ||"}, {"n": 14, "title": "ఆరాధించెద నిను మది పొగడెద", "lyrics": "పల్లవి: ఆరాధించెద నిను మది పొగడెద - నిరతము నిను స్తుతియించెదను (2)\nమార్గము నీవే సత్యము నీవే - జీవము నీవే నా ప్రభువా (2)\n\n1. విస్తారంబగు - వ్యాపకములలో - విడచితి నీ సహవాసమును (2)\nసరిదిద్దితివి నా జీవితము (2) - నిను సేవింపగా నేర్పిన ప్రభువా (2) ||ఆరా||\n\n2. నా జీవితమున నీ మాటలను - వినుటయే చాలని యెరిగితిని\nనా కన్నీటితో నీ పాదములను - కడుగుట నేర్పిన ఓ నా ప్రభువా ||ఆరా||\n\n3. వ్యర్థపరచితిని నా సర్వమును - స్వార్థముతో జీవించితిని\nగుర్తించితిని నీ త్యాగమును - వినయముతో నీ సన్నిధిచేరి ||ఆరా||\n\n4. నీరక్తముతో నన్ను కడిగితివి - పరిశుద్ధునిగా జేసితివి\nనీరక్షణకై స్తోత్రము చేయుచు - నిత్యమునిన్ను కొనియాడెదను ||ఆరా||\n\n5. దుర్గంధముతో నిండిన నన్ను - దయతో నీవు పిలిచితివి\nప్రేమతో పరమ విందు నొసంగి - ఆనందింపగ జేసిన ప్రభువా ||ఆరా||\n\n6. ప్రియముగ దాచిన అత్తరు భరణి - పగులగొట్టి నిన్ను పూజింతు\nనీ ప్రేమను నే నెన్నగ తరమా - నా జీవితమున చాలిన ప్రభువా ||ఆరా||\n\n7. పెద్దలు పరిశుద్దులు ఘనదూతలు - నీ సన్నిధిలో నిలచినను\nలెక్కింపగ జాలని జనమందున - నను గుర్తింతువు నా ప్రియ ప్రభువా ||ఆరా||"}, {"n": 15, "title": "దూతగణములెల్ల ఆరాధించిరిగా", "lyrics": "పల్లవి: దూతగణములెల్ల ఆరాధించిరిగా - పరిశుద్ధుడు సైన్యముల యెహోవని (2)\n\nఅ.ప : ఇహపరములలో ఆయన మహిమ - నిండియున్నదని గానము చేసిరి - (2)\n\n1. నిష్కళంకమైనది నీ కనుదృష్టి\nనీవు చూడలేవుగా దుష్టత్వమును (2)\nదూరస్థులమైన మమ్ము నీ రక్తముతో (2)\nచేరదీసి చేర్చుకొన్న స్వామి స్తోత్రము (2) ||దూత||\n\n2. నా హృదయమునందు శుద్ధి కలిగించితివి\nనిన్ను చూచె నిరీక్షణ నా కొసగితివి\nపెన్నుగా నీ పరిశుద్ధత నొసగిన దేవా\nఘనముగాను పొగడెదను పావన ప్రభువా ||దూత||\n\n3. పాపముతో పతనమైన నా దేహమును\nపరిశుద్ధాలయముగాని చేసికొంటివి\nపరిశుద్ధ స్వాస్థ్యమునకు నన్ను పిలిచిన\nసర్వోన్నతుడా నిన్ను స్తుతియించెదను ||దూత||\n\n4. నీ రక్తముచేత నాకు కలిగించితివి\nనిర్భయంబుగాను పరిశుద్ధ స్థలములో\nప్రవేశింపజేసియున్న ప్రియ యేసువా\nపూజించెద నిన్ను నాదు జీవితమంతా ||దూత||\n\n5. పరలోకపు తండ్రి నీవు పరిపూర్ణుడవు\nపరిపూర్ణతయందు నన్ను నడిపించితివి\nసమస్తమును చేయుటకు బలపరచితివి\nసమాధాన కర్తనీకే వందన స్తుతులు ||దూత||"}];
+var curSong = 0;
+function toggleSongs() {
+  var body = document.getElementById('songs-body'), arrow = document.getElementById('songs-arrow'), header = document.getElementById('songs-header');
+  if (!header.classList.contains('open')) { body.style.maxHeight = body.scrollHeight + 40 + 'px'; arrow.style.transform = 'rotate(90deg)'; header.classList.add('open'); }
+  else { body.style.maxHeight = '0'; arrow.style.transform = 'rotate(0deg)'; header.classList.remove('open'); }
+}
+function esc(t) { return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function renderLyrics(text) {
+  return text.split('\n').map(function (l) {
+    if (!l.trim()) return '<div class="gap"></div>';
+    var h = esc(l);
+    h = h.replace(/^(పల్లవి:)/, '<span class="lbl">$1</span>');
+    h = h.replace(/^(\d+)\.\s*/, '<span class="vn">$1.</span>');
+    h = h.replace(/\|\|([^|]*)\|\|/g, '<span class="ch">||$1||</span>');
+    h = h.replace(/\((\d)\)/g, '<span class="rep">($1)</span>');
+    return '<p class="ln">' + h + '</p>';
+  }).join('');
+}
+function showSong(n) {
+  var i = SONGS.findIndex(function (x) { return x.n === n; });
+  if (i < 0) return;
+  curSong = i; var s = SONGS[i];
+  document.getElementById('v-count').textContent = 'Song ' + s.n + ' of ' + SONGS.length;
+  document.getElementById('v-title').textContent = s.title;
+  document.getElementById('lyrics').innerHTML = renderLyrics(s.lyrics);
+  document.getElementById('v-body').scrollTop = 0;
+  document.getElementById('v-prev').disabled = i === 0;
+  document.getElementById('v-next').disabled = i === SONGS.length - 1;
+  document.getElementById('viewer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function hideSong() { document.getElementById('viewer').classList.remove('open'); document.body.style.overflow = ''; }
+function openSong(n) { if (location.hash === '#song-' + n) showSong(n); else location.hash = 'song-' + n; }
+function closeSong() { if (/^#song-\d+$/.test(location.hash)) { history.replaceState(null, '', location.pathname + location.search); } hideSong(); }
+function stepSong(d) { var j = curSong + d; if (j >= 0 && j < SONGS.length) { history.replaceState(null, '', '#song-' + SONGS[j].n); showSong(SONGS[j].n); } }
+function route() { var m = location.hash.match(/^#song-(\d+)$/); if (m) showSong(parseInt(m[1], 10)); else hideSong(); }
+window.addEventListener('hashchange', route);
+var lyrSize = 19;
+try { var sv = parseInt(localStorage.getItem('tgf-lyr'), 10); if (sv >= 14 && sv <= 34) lyrSize = sv; } catch (e) {}
+function applySize() { document.getElementById('lyrics').style.setProperty('--lyr', lyrSize + 'px'); }
+function fontStep(d) { lyrSize = Math.max(14, Math.min(34, lyrSize + d * 2)); applySize(); try { localStorage.setItem('tgf-lyr', lyrSize); } catch (e) {} }
+applySize();
+(function () {
+  var b = document.getElementById('v-body'), x0 = null, y0 = null;
+  b.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  b.addEventListener('touchend', function (e) {
+    if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) stepSong(dx < 0 ? 1 : -1); x0 = null;
+  }, { passive: true });
+})();
+document.addEventListener('keydown', function (e) {
+  if (!document.getElementById('viewer').classList.contains('open')) return;
+  if (e.key === 'ArrowRight') stepSong(1); else if (e.key === 'ArrowLeft') stepSong(-1);
+});
+route();
+
+// Countdown (Eastern Time)
+(function () {
+  var el = document.getElementById('countdown');
+  var start = new Date('2026-11-26T15:00:00-05:00'), end = new Date('2026-11-28T15:00:00-05:00');
+  function tick() {
+    var now = new Date();
+    if (now >= end) { el.innerHTML = 'Thank you for joining us! 🙏'; return; }
+    if (now >= start) { el.innerHTML = '<b>Happening now</b> · Happy Thanksgiving! ✝︎'; return; }
+    var s = Math.floor((start - now) / 1000), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+    el.innerHTML = 'Starts in <b>' + d + 'd ' + h + 'h ' + m + 'm</b> · Nov 26 – 28';
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+</body>
+</html>
