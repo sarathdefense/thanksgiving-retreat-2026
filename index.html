@@ -562,19 +562,7 @@ document.addEventListener('keydown', function (e) {
 });
 route();
 
-// Countdown (Eastern Time)
-(function () {
-  var el = document.getElementById('countdown');
-  var start = new Date('2026-11-26T15:00:00-05:00'), end = new Date('2026-11-28T15:00:00-05:00');
-  function tick() {
-    var now = new Date();
-    if (now >= end) { el.innerHTML = 'Thank you for joining us! 🙏'; return; }
-    if (now >= start) { el.innerHTML = '<b>Happening now</b> · Happy Thanksgiving! ✝︎'; return; }
-    var s = Math.floor((start - now) / 1000), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
-    el.innerHTML = 'Starts in <b>' + d + 'd ' + h + 'h ' + m + 'm</b> · Nov 26 – 28';
-  }
-  tick(); setInterval(tick, 30000);
-})();
+
 </script>
 </body>
 </html>
