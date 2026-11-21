@@ -177,7 +177,8 @@
   .lyrics .ch { color: #c9a227; font-style: italic; font-size: 0.85em; white-space: nowrap; }
   .lyrics .rep { color: rgba(232,196,90,0.85); font-size: 0.8em; }
   .v-bottom { flex-shrink: 0; display: flex; justify-content: space-between; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(201,162,39,0.25); background: rgba(10,18,40,0.96); }
-  .v-bottom .v-btn { flex: 1; padding: 12px; font-size: 13px; }
+  .v-bottom { padding-left: max(14px, calc((100% - 720px) / 2)); padding-right: max(14px, calc((100% - 720px) / 2)); }
+  .v-bottom .v-btn { flex: 0 1 150px; padding: 9px 14px; font-size: 12px; }
   .v-btn[disabled] { opacity: 0.3; cursor: default; }
 
   /* LOCATION */
