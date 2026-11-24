@@ -133,6 +133,8 @@
   .sched-title { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; color: #fff; }
   .sched-sub { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
   #sched-header:not(.open) #sched-arrow { animation: blinkArrow 1.3s ease-in-out infinite; }
+  #songs-header:not(.open) #songs-arrow { animation: blinkArrowDark 1.3s ease-in-out infinite; }
+  @keyframes blinkArrowDark { 0%, 100% { opacity: 1; text-shadow: 0 0 8px rgba(255,255,255,0.9); } 50% { opacity: 0.2; text-shadow: none; } }
   @keyframes blinkArrow { 0%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(232,196,90,0.9); } 50% { opacity: 0.2; text-shadow: none; } }
   .sched-arrow { color: #c9a227; font-size: 22px; transition: transform 0.3s; flex-shrink: 0; }
   .sched-body {
