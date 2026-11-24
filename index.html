@@ -149,6 +149,15 @@
   .sched-content { padding-bottom: 16px; flex: 1; }
   .sched-time { font-size: 10px; color: #c9a227; font-weight: 700; letter-spacing: 1px; margin-bottom: 2px; }
   .sched-name { font-size: 13px; color: #fff; font-weight: 600; }
+
+  .day-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 6px 0 12px; padding: 8px 12px; border-radius: 8px; background: rgba(201,162,39,0.1); border-left: 3px solid #c9a227; }
+  .day-head:not(:first-child) { margin-top: 10px; }
+  .day-name { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: #e8c45a; letter-spacing: 1px; }
+  .day-date { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
+  .sess-tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0d1b3e; background: #c9a227; padding: 2px 7px; border-radius: 10px; margin-right: 4px; vertical-align: 1px; }
+  .sess-subs { margin-top: 6px; padding-left: 10px; border-left: 1px dashed rgba(201,162,39,0.35); }
+  .sess-subs p { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+  .sess-subs span { display: inline-block; min-width: 118px; color: rgba(232,196,90,0.85); font-size: 11px; font-weight: 600; }
   .sched-speaker { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; font-style: italic; }
 
 
@@ -377,37 +386,139 @@
     <div class="sched-left">
       <div class="sched-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8c45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
       <div>
-        <p class="sched-title-label">Thanksgiving Weekend</p>
+        <p class="sched-title-label">Retreat Schedule</p>
         <p class="sched-title">Nov 26 – Nov 28, 2026</p>
-        <p class="sched-sub">Arrive Thu 3 PM &middot; Depart Sat 3 PM</p>
+        <p class="sched-sub">4 sessions &middot; Tap for full schedule</p>
       </div>
     </div>
     <span class="sched-arrow" id="sched-arrow">&#10148;</span>
   </div>
   <div class="sched-body" id="sched-body">
     <div class="sched-inner">
+      <div class="day-head"><span class="day-name">Thursday</span><span class="day-date">November 26, 2026</span></div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">Noon – 3:00 PM</p>
+          <p class="sched-name">Arrival &amp; Check-in</p>
+        </div>
+      </div>
       <div class="sched-item">
         <div class="sched-dot-wrap"><div class="sched-dot active"></div></div>
         <div class="sched-content">
-          <p class="sched-time">THU · NOV 26 · 3:00 PM</p>
-          <p class="sched-name">🚗 Arrival &amp; Check-in</p>
-          <p class="sched-speaker">Thanksgiving Day — settle in at Ebenezer Retreat Center</p>
+          <p class="sched-time">5:00 – 7:30 PM</p>
+          <p class="sched-name"><span class="sess-tag">Session 1</span> The Principle of Worship</p>
+          <div class="sess-subs"><p><span>5:00 – 5:45 PM</span>Singing</p><p><span>5:45 – 7:00 PM</span>Teaching</p></div>
         </div>
       </div>
       <div class="sched-item">
         <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
         <div class="sched-content">
-          <p class="sched-time">FRI · NOV 27 · ALL DAY</p>
-          <p class="sched-name">🙏 Worship, Fellowship &amp; Rest</p>
-          <p class="sched-speaker">A time to worship, give thanks, and grow closer to the Lord</p>
+          <p class="sched-time">7:00 – 10:00 PM</p>
+          <p class="sched-name">Thanksgiving Dinner &amp; Fellowship</p>
+        </div>
+      </div>
+      <div class="day-head"><span class="day-name">Friday</span><span class="day-date">November 27, 2026</span></div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">7:00 – 9:00 AM</p>
+          <p class="sched-name">Breakfast</p>
         </div>
       </div>
       <div class="sched-item">
         <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
         <div class="sched-content">
-          <p class="sched-time">SAT · NOV 28 · 3:00 PM</p>
-          <p class="sched-name">👋 Departure</p>
-          <p class="sched-speaker">Safe travels home</p>
+          <p class="sched-time">9:15 – 9:45 AM</p>
+          <p class="sched-name">Family Prayer</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot active"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">10:00 AM – 12:30 PM</p>
+          <p class="sched-name"><span class="sess-tag">Session 2</span> The Problem of Worship</p>
+          <div class="sess-subs"><p><span>10:00 – 10:45 AM</span>Singing</p><p><span>10:45 AM – 12:00 PM</span>Teaching</p></div>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">12:30 – 1:30 PM</p>
+          <p class="sched-name">Lunch</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">1:30 – 3:30 PM</p>
+          <p class="sched-name">Youth &amp; Ladies Fellowship, Men’s Q&amp;A</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">3:30 – 5:30 PM</p>
+          <p class="sched-name">Break &amp; Fellowship</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot active"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">5:30 – 8:00 PM</p>
+          <p class="sched-name"><span class="sess-tag">Session 3</span> The Priority and Practice of Worship</p>
+          <div class="sess-subs"><p><span>5:30 – 6:15 PM</span>Singing</p><p><span>6:15 – 7:30 PM</span>Teaching</p></div>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">8:00 – 10:00 PM</p>
+          <p class="sched-name">Dinner &amp; Bonfire Fellowship</p>
+        </div>
+      </div>
+      <div class="day-head"><span class="day-name">Saturday</span><span class="day-date">November 28, 2026</span></div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">7:00 – 9:00 AM</p>
+          <p class="sched-name">Breakfast</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">9:00 – 9:30 AM</p>
+          <p class="sched-name">Family Prayer</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot active"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">9:30 AM – 12:30 PM</p>
+          <p class="sched-name"><span class="sess-tag">Session 4</span> The Pleasure of Worship</p>
+          <div class="sess-subs"><p><span>9:30 – 10:15 AM</span>Singing</p><p><span>10:15 – 11:30 AM</span>Teaching</p><p><span>11:30 AM – 12:30 PM</span>Teen Panel</p></div>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">12:30 – 1:30 PM</p>
+          <p class="sched-name">Lunch</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">1:30 – 3:00 PM</p>
+          <p class="sched-name">Children’s Presentation</p>
+        </div>
+      </div>
+      <div class="sched-item">
+        <div class="sched-dot-wrap"><div class="sched-dot"></div></div>
+        <div class="sched-content">
+          <p class="sched-time">3:00 PM onwards</p>
+          <p class="sched-name">Check-out</p>
         </div>
       </div>
     </div>
@@ -495,7 +606,7 @@
 <script>
 function toggleSchedule() {
   var body = document.getElementById('sched-body'), arrow = document.getElementById('sched-arrow'), header = document.getElementById('sched-header');
-  if (!header.classList.contains('open')) { body.style.maxHeight = '600px'; arrow.style.transform = 'rotate(90deg)'; header.classList.add('open'); }
+  if (!header.classList.contains('open')) { body.style.maxHeight = body.scrollHeight + 40 + 'px'; arrow.style.transform = 'rotate(90deg)'; header.classList.add('open'); }
   else { body.style.maxHeight = '0'; arrow.style.transform = 'rotate(0deg)'; header.classList.remove('open'); }
 }
 function openDrawer() {
